@@ -9,70 +9,72 @@
             --bg: #0b0b0c; --card: #1c1c1e; --text: #ffffff; --sub: #8e8e93;
             --border: #2c2c2e; --accent: #34c759; --primary: #007aff;
         }
-        body { background: var(--bg); color: var(--text); font-family: -apple-system, sans-serif; margin: 0; padding: 10px; transition: 0.3s; padding-bottom: 50px; }
+        body { background: var(--bg); color: var(--text); font-family: -apple-system, sans-serif; margin: 0; padding: 15px; transition: 0.3s; padding-bottom: 60px; }
         .container { max-width: 550px; margin: 0 auto; }
         
-        /* Header */
-        .header-section { margin-bottom: 20px; text-align: center; }
-        .main-title { font-size: 1.5rem; font-weight: 800; margin: 0; letter-spacing: -0.5px; }
-        .progress-bar { width: 100%; height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; margin-top: 12px; }
+        /* Header Section - Spacing Optimized */
+        .header-section { margin-bottom: 35px; text-align: center; }
+        .main-title { font-size: 1.7rem; font-weight: 800; margin: 0; letter-spacing: -0.5px; }
+        .progress-container { margin-top: 25px; text-align: left; }
+        .progress-bar { width: 100%; height: 7px; background: var(--border); border-radius: 4px; overflow: hidden; margin-top: 10px; }
         .progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary), #5ac8fa); width: 0%; transition: 1.5s; }
-        .progress-label { font-size: 0.7rem; color: var(--sub); display: flex; justify-content: space-between; margin-bottom: 4px; font-weight: 600; }
+        .progress-label { font-size: 0.75rem; color: var(--sub); display: flex; justify-content: space-between; font-weight: 600; }
 
-        /* Weekly Table: Mobile Optimized */
-        .week-card { background: var(--card); border-radius: 18px; border: 1px solid var(--border); overflow: hidden; margin-bottom: 20px; }
-        .nav-header { display: flex; justify-content: space-between; align-items: center; padding: 12px; border-bottom: 1px solid var(--border); }
-        .nav-btn { background: var(--border); border: none; width: 30px; height: 30px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        /* Weekly Tracker Table */
+        .week-card { background: var(--card); border-radius: 20px; border: 1px solid var(--border); overflow: hidden; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+        .nav-header { display: flex; justify-content: space-between; align-items: center; padding: 18px; border-bottom: 1px solid var(--border); }
+        .nav-btn { background: var(--border); border: none; width: 34px; height: 34px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
         .nav-btn:disabled { opacity: 0.2; }
-        .nav-btn svg { width: 16px; height: 16px; fill: var(--text); }
+        .nav-btn svg { width: 18px; height: 18px; fill: var(--text); }
 
         .scroll-x { overflow-x: auto; width: 100%; }
         table { width: 100%; border-collapse: collapse; table-layout: fixed; }
-        th, td { padding: 10px 2px; text-align: center; border-bottom: 1px solid var(--border); font-size: 0.75rem; }
-        .group-header { background: rgba(255,255,255,0.03); color: var(--sub); font-size: 0.65rem; text-align: left; padding: 6px 12px; font-weight: bold; }
-        .habit-name { text-align: left; font-weight: 600; padding-left: 10px; width: 90px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .week-count { font-size: 0.6rem; color: var(--primary); background: rgba(0,122,255,0.1); padding: 1px 3px; border-radius: 4px; margin-left: 3px; }
-        .chk-box { width: 22px; height: 22px; cursor: pointer; accent-color: var(--accent); }
-
-        /* Swipe Insight/Calendar */
-        .insight-list { display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px; }
-        .habit-swipe-wrapper { width: 100%; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; border-radius: 22px; border: 1px solid var(--border); background: var(--card); }
-        .habit-swipe-wrapper::-webkit-scrollbar { display: none; }
-        .habit-swipe-content { display: flex; width: 200%; }
-        .pane { flex: 0 0 50%; padding: 18px; box-sizing: border-box; scroll-snap-align: start; }
-
-        /* Stats & Calendar Grid */
-        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 12px 0; }
-        .stat-box { background: rgba(255,255,255,0.04); padding: 10px 2px; border-radius: 12px; text-align: center; }
-        .stat-val { display: block; font-size: 0.95rem; font-weight: 800; color: var(--accent); }
-        .stat-lbl { display: block; font-size: 0.55rem; color: var(--sub); margin-top: 3px; text-transform: uppercase; }
-        .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
-        .cal-day-label { font-size: 0.6rem; color: var(--sub); text-align: center; }
-        .cal-cell { aspect-ratio: 1; border-radius: 6px; background: var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: bold; transition: 0.3s; }
-
-        /* Management Cards */
-        .card { background: var(--card); border-radius: 18px; padding: 18px; border: 1px solid var(--border); margin-bottom: 15px; }
-        .section-label { font-size: 0.7rem; color: var(--sub); font-weight: bold; letter-spacing: 0.5px; margin-bottom: 12px; display: block; }
-        .input-row { display: flex; gap: 6px; margin-top: 8px; }
-        select, .text-input { background: var(--bg); border: 1px solid var(--border); color: var(--text); border-radius: 10px; padding: 10px; font-size: 0.85rem; outline: none; width: 100%; box-sizing: border-box; }
+        th, td { padding: 12px 2px; text-align: center; border-bottom: 1px solid var(--border); font-size: 0.8rem; }
+        .group-header { background: rgba(255,255,255,0.03); color: var(--sub); font-size: 0.7rem; text-align: left; padding: 8px 15px; font-weight: bold; }
         
-        /* Task List with Delete */
-        .task-item { display: flex; justify-content: space-between; align-items: center; padding: 12px; background: var(--bg); border-radius: 12px; margin-bottom: 8px; border-left: 4px solid var(--color); }
-        .task-content { flex: 1; display: flex; align-items: center; gap: 8px; font-size: 0.85rem; cursor: pointer; }
+        /* Habit Name Font Size Fix */
+        .habit-name { text-align: left; font-weight: 600; padding-left: 12px; width: 100px; white-space: nowrap; overflow: hidden; }
+        .habit-name.long { font-size: 0.65rem; letter-spacing: -0.5px; } /* 긴 과목명 전용 */
+        .week-count { font-size: 0.6rem; color: var(--primary); background: rgba(0,122,255,0.1); padding: 1px 4px; border-radius: 4px; margin-left: 4px; }
+        .chk-box { width: 24px; height: 24px; cursor: pointer; accent-color: var(--accent); }
+
+        /* Unified Card Style */
+        .card { background: var(--card); border-radius: 22px; padding: 22px; border: 1px solid var(--border); margin-bottom: 25px; }
+        .section-label { font-size: 0.8rem; color: var(--sub); font-weight: bold; letter-spacing: 0.8px; margin-bottom: 15px; display: block; }
+        
+        /* Stats Display */
+        .insight-list { display: flex; flex-direction: column; gap: 18px; margin-bottom: 35px; }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 15px; }
+        .stat-box { background: rgba(255,255,255,0.04); padding: 12px 2px; border-radius: 14px; text-align: center; }
+        .stat-val { display: block; font-size: 1rem; font-weight: 800; color: var(--accent); }
+        .stat-lbl { display: block; font-size: 0.6rem; color: var(--sub); margin-top: 4px; text-transform: uppercase; }
+
+        /* Integrated Calendar Heatmap */
+        .calendar-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+        .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+        .cal-day-label { font-size: 0.65rem; color: var(--sub); text-align: center; padding-bottom: 5px; }
+        .cal-cell { aspect-ratio: 1; border-radius: 8px; background: var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: bold; transition: 0.3s; }
+
+        /* Task List Management */
+        .input-row { display: flex; gap: 8px; margin-top: 10px; }
+        select, .text-input { background: var(--bg); border: 1px solid var(--border); color: var(--text); border-radius: 12px; padding: 12px; font-size: 0.9rem; outline: none; width: 100%; box-sizing: border-box; }
+        .task-item { display: flex; justify-content: space-between; align-items: center; padding: 14px; background: var(--bg); border-radius: 15px; margin-bottom: 10px; border-left: 4px solid var(--color); }
+        .task-content { flex: 1; display: flex; align-items: center; gap: 10px; font-size: 0.85rem; cursor: pointer; }
         .task-item.done .task-text { text-decoration: line-through; opacity: 0.4; }
-        .task-del-btn { background: none; border: none; color: #ff453a; font-size: 1.1rem; padding: 0 5px; cursor: pointer; opacity: 0.6; }
+        .task-del-btn { background: none; border: none; color: #ff453a; font-size: 1.2rem; cursor: pointer; opacity: 0.6; padding: 0 5px; }
 
-        .palette { display: flex; gap: 10px; width: 100%; overflow-x: auto; padding: 5px 0; scrollbar-width: none; box-sizing: border-box; }
-        .color-opt { width: 22px; height: 22px; border-radius: 50%; cursor: pointer; flex-shrink: 0; border: 2px solid transparent; }
-        .color-opt.selected { border-color: #fff; transform: scale(1.1); }
+        /* Palette */
+        .palette { display: flex; gap: 12px; width: 100%; overflow-x: auto; padding: 10px 0; scrollbar-width: none; box-sizing: border-box; }
+        .color-opt { width: 26px; height: 26px; border-radius: 50%; cursor: pointer; flex-shrink: 0; border: 2px solid transparent; }
+        .color-opt.selected { border-color: #fff; transform: scale(1.15); }
 
-        .btn { padding: 12px; border-radius: 10px; border: none; font-weight: bold; cursor: pointer; width: 100%; margin-top: 8px; transition: 0.2s; font-size: 0.85rem; }
+        .btn { padding: 14px; border-radius: 12px; border: none; font-weight: bold; cursor: pointer; width: 100%; margin-top: 12px; transition: 0.2s; }
         .btn-primary { background: var(--primary); color: white; }
         .btn-danger { background: rgba(255, 59, 48, 0.15); color: #ff453a; }
-        .btn-ghost { background: var(--border); color: var(--text); padding: 6px 10px; font-size: 0.75rem; width: auto; margin-top: 0; }
+        .btn-ghost { background: var(--border); color: var(--text); padding: 8px 15px; font-size: 0.8rem; width: auto; margin-top: 0; }
         
-        .dot-grid { display: grid; grid-template-columns: repeat(20, 1fr); gap: 3px; margin-top: 10px; }
-        .dot { aspect-ratio: 1; background: var(--border); border-radius: 2px; }
+        .dot-grid { display: grid; grid-template-columns: repeat(20, 1fr); gap: 4px; margin-top: 15px; }
+        .dot { aspect-ratio: 1; background: var(--border); border-radius: 3px; }
         .dot.active { background: var(--color); }
     </style>
 </head>
@@ -90,7 +92,7 @@
     <div class="week-card">
         <div class="nav-header">
             <button id="prevBtn" class="nav-btn" onclick="changeWeek(-1)"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>
-            <h3 id="weekLabel" style="margin:0; font-size: 0.9rem;">3월 1주차</h3>
+            <h3 id="weekLabel" style="margin:0; font-size: 1rem;">3월 1주차</h3>
             <button id="nextBtn" class="nav-btn" onclick="changeWeek(1)"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></button>
         </div>
         <div class="scroll-x">
@@ -103,18 +105,27 @@
 
     <div class="card">
         <span class="section-label">주간 플래너</span>
-        <div class="input-row"><select id="taskHabitSelect" style="width: 100px;"></select><input type="text" id="taskInput" class="text-input" placeholder="할 일 입력..."></div>
+        <div class="input-row"><select id="taskHabitSelect" style="width: 120px;"></select><input type="text" id="taskInput" class="text-input" placeholder="할 일 입력..."></div>
         <button class="btn btn-primary" onclick="addTask()">할 일 추가</button>
-        <div id="taskList" style="margin-top: 12px;"></div>
+        <div id="taskList" style="margin-top: 15px;"></div>
     </div>
 
-    <span class="section-label" style="margin-left: 5px;">상세 통계 (오른쪽으로 밀어 월간 기록 확인)</span>
+    <span class="section-label" style="margin-left: 5px;">항목별 성취도</span>
     <div id="insightDash" class="insight-list"></div>
+
+    <div class="card" id="calendarSection">
+        <div class="calendar-nav">
+            <button class="btn-ghost" onclick="changeCalMonth(-1)">◀</button>
+            <strong id="calMonthLabel">3월 통합 활동</strong>
+            <button class="btn-ghost" onclick="changeCalMonth(1)">▶</button>
+        </div>
+        <div id="integratedCalendar"></div>
+    </div>
 
     <div class="card">
         <span class="section-label">신규 항목 추가</span>
-        <div style="display: flex; flex-direction: column; gap: 8px;">
-            <div style="display:flex; gap:6px;"><input type="text" id="newName" class="text-input" placeholder="항목명"><select id="newGroup" style="width:90px;"><option value="Academic">학업</option><option value="Personal">생활</option></select></div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="display:flex; gap:8px;"><input type="text" id="newName" class="text-input" placeholder="항목명"><select id="newGroup" style="width:100px;"><option value="Academic">학업</option><option value="Personal">생활</option></select></div>
             <div class="palette" id="palette"></div>
             <button class="btn btn-primary" onclick="addNewHabit()">항목 추가</button>
         </div>
@@ -122,12 +133,12 @@
 
     <div class="card">
         <span class="section-label">항목 순서 변경</span>
-        <div class="input-row" style="align-items: center;"><select id="orderHabitSelect"></select><div style="display: flex; gap: 6px;"><button class="btn-ghost" onclick="moveHabit(-1)">▲</button><button class="btn-ghost" onclick="moveHabit(1)">▼</button></div></div>
+        <div class="input-row" style="align-items: center;"><select id="orderHabitSelect"></select><div style="display: flex; gap: 8px;"><button class="btn-ghost" onclick="moveHabit(-1)">▲</button><button class="btn-ghost" onclick="moveHabit(1)">▼</button></div></div>
     </div>
 
     <div class="card">
         <span class="section-label">항목 삭제 관리</span>
-        <select id="deleteHabitSelect" style="margin-bottom: 8px;"></select>
+        <select id="deleteHabitSelect" style="margin-bottom: 10px;"></select>
         <button class="btn btn-danger" onclick="deleteHabit()">항목 삭제</button>
     </div>
 </div>
@@ -140,9 +151,9 @@
     
     let selectedColor = COLORS[0];
     let displayDate = new Date(TODAY_STR);
-    let calViewDate = new Date(TODAY_STR); // 캘린더 전용 뷰 날짜
+    let calViewDate = new Date(TODAY_STR);
 
-    let myHabits = JSON.parse(localStorage.getItem('bp_v12_habits')) || [
+    let myHabits = JSON.parse(localStorage.getItem('bp_v13_habits')) || [
         { name: "경영통계", color: "#5856d6", group: "Academic" },
         { name: "투자론", color: "#007aff", group: "Academic" },
         { name: "조직행위론", color: "#ff9500", group: "Academic" },
@@ -152,12 +163,13 @@
         { name: "운동", color: "#34c759", group: "Personal" },
         { name: "물 마시기", color: "#5ac8fa", group: "Personal" }
     ];
-    let habitData = JSON.parse(localStorage.getItem('bp_v12_data')) || {};
-    let weeklyTasks = JSON.parse(localStorage.getItem('bp_v12_tasks')) || {};
+    
+    let habitData = JSON.parse(localStorage.getItem('bp_v13_data')) || {};
+    let weeklyTasks = JSON.parse(localStorage.getItem('bp_v13_tasks')) || {};
 
     function getFmtDate(d) { return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; }
 
-    function init() { renderProgressBar(); renderPalette(); renderWeek(); renderPlanner(); renderVisuals(); updateSelectMenus(); checkNavBounds(); }
+    function init() { renderProgressBar(); renderPalette(); renderWeek(); renderPlanner(); renderVisuals(); updateSelectMenus(); checkNavBounds(); renderIntegratedCalendar(); }
 
     function renderProgressBar() {
         const start = new Date(START_DATE_STR), end = new Date(END_DATE_STR), now = new Date();
@@ -166,9 +178,6 @@
         document.getElementById('prog-val').innerText = percent + '%';
     }
 
-    function renderPalette() { document.getElementById('palette').innerHTML = COLORS.map(c => `<div class="color-opt ${c === selectedColor ? 'selected' : ''}" style="background:${c}" onclick="selectColor('${c}')"></div>`).join(''); }
-    function selectColor(c) { selectedColor = c; renderPalette(); }
-
     function renderWeek() {
         const date = new Date(displayDate);
         const diff = date.getDate() - date.getDay() + (date.getDay() === 0 ? -6 : 1);
@@ -176,7 +185,7 @@
         const weekInfo = getWeekInfo(monday);
         document.getElementById('weekLabel').innerText = `${weekInfo.month}월 ${weekInfo.week}주차`;
         
-        let head = '<th style="width:90px;">항목</th>'; const days = ['월','화','수','목','금','토','일'];
+        let head = '<th style="width:100px;">항목</th>'; const days = ['월','화','수','목','금','토','일'];
         for(let i=0; i<7; i++) { let d = new Date(monday); d.setDate(d.getDate() + i); head += `<th>${d.getDate()}<br>${days[i]}</th>`; }
         document.getElementById('dateHead').innerHTML = head;
 
@@ -185,7 +194,9 @@
             rows += `<tr><td colspan="8" class="group-header">${sections[key]}</td></tr>`;
             myHabits.filter(h => h.group === key).forEach(h => {
                 let count = 0; for(let i=0; i<7; i++) { let d = new Date(monday); d.setDate(d.getDate()+i); if(habitData[h.name] && habitData[h.name][getFmtDate(d)]) count++; }
-                rows += `<tr><td class="habit-name">${h.name}<span class="week-count">${count}d</span></td>`;
+                // 글자 수에 따른 폰트 크기 자동 조정
+                const nameClass = h.name.length > 7 ? 'habit-name long' : 'habit-name';
+                rows += `<tr><td class="${nameClass}">${h.name}<span class="week-count">${count}d</span></td>`;
                 for(let i=0; i<7; i++) {
                     let d = new Date(monday); d.setDate(d.getDate()+i); let ds = getFmtDate(d);
                     rows += `<td><input type="checkbox" class="chk-box" ${ (habitData[h.name] && habitData[h.name][ds]) ? 'checked' : '' } ${ds < START_DATE_STR || ds > END_DATE_STR ? 'disabled' : ''} onchange="toggleCheck('${h.name}', '${ds}')"></td>`;
@@ -196,43 +207,11 @@
         document.getElementById('habitRows').innerHTML = rows;
     }
 
-    function renderVisuals() {
-        const dash = document.getElementById('insightDash'); dash.innerHTML = '';
-        myHabits.forEach(h => {
-            const streak = calculateStreak(h.name);
-            const total = Object.values(habitData[h.name] || {}).filter(v => v).length;
-            const wrapper = document.createElement('div');
-            wrapper.className = 'habit-swipe-wrapper';
-            wrapper.innerHTML = `
-                <div class="habit-swipe-content">
-                    <div class="pane">
-                        <div style="display:flex; justify-content:space-between; align-items:center;"><strong>${h.name}</strong><span style="font-size:0.6rem; color:var(--sub);">월간 기록 →</span></div>
-                        <div class="stats-grid">
-                            <div class="stat-box"><span class="stat-val">${streak}</span><span class="stat-lbl">연속</span></div>
-                            <div class="stat-box"><span class="stat-val">${total}</span><span class="stat-lbl">합계</span></div>
-                            <div class="stat-box"><span class="stat-val">${Math.round((total/112)*100)}%</span><span class="stat-lbl">달성</span></div>
-                            <div class="stat-box"><span class="stat-val">3/3</span><span class="stat-lbl">시작</span></div>
-                        </div>
-                        <div class="dot-grid">${generateDots(h)}</div>
-                    </div>
-                    <div class="pane">
-                        <div class="calendar-header">
-                            <button class="btn-ghost" onclick="changeCalMonth(-1, event)">◀</button>
-                            <strong>${calViewDate.getMonth()+1}월 기록</strong>
-                            <button class="btn-ghost" onclick="changeCalMonth(1, event)">▶</button>
-                        </div>
-                        ${renderCalendar(h)}
-                    </div>
-                </div>
-            `;
-            dash.appendChild(wrapper);
-        });
-    }
-
-    function renderCalendar(habit) {
+    function renderIntegratedCalendar() {
         const year = calViewDate.getFullYear(), month = calViewDate.getMonth();
         const firstDay = new Date(year, month, 1).getDay();
         const daysInMonth = new Date(year, month + 1, 0).getDate();
+        document.getElementById('calMonthLabel').innerText = `${month + 1}월 통합 활동`;
         
         let html = `<div class="calendar-grid">`;
         ['월','화','수','목','금','토','일'].forEach(d => html += `<div class="cal-day-label">${d}</div>`);
@@ -241,17 +220,45 @@
             const ds = getFmtDate(new Date(year, month, i));
             const activityCount = myHabits.filter(h => habitData[h.name] && habitData[h.name][ds]).length;
             const intensity = activityCount === 0 ? 0.1 : (activityCount / myHabits.length);
-            html += `<div class="cal-cell" style="background:${habit.color}; opacity:${intensity}">${i}</div>`;
+            // 통합 캘린더는 기본 블루 테마로 진하기 조절
+            html += `<div class="cal-cell" style="background:#007aff; opacity:${intensity}">${i}</div>`;
         }
-        return html + '</div>';
+        document.getElementById('integratedCalendar').innerHTML = html + '</div>';
     }
 
-    function changeCalMonth(offset, e) {
-        e.stopPropagation();
+    function changeCalMonth(offset) {
         calViewDate.setMonth(calViewDate.getMonth() + offset);
-        renderVisuals();
+        renderIntegratedCalendar();
     }
 
+    function renderVisuals() {
+        const dash = document.getElementById('insightDash'); dash.innerHTML = '';
+        myHabits.forEach(h => {
+            const streak = calculateStreak(h.name);
+            const total = Object.values(habitData[h.name] || {}).filter(v => v).length;
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div style="display:flex; justify-content:space-between; align-items:center;"><strong>${h.name}</strong></div>
+                <div class="stats-grid">
+                    <div class="stat-box"><span class="stat-val">${streak}</span><span class="stat-lbl">연속</span></div>
+                    <div class="stat-box"><span class="stat-val">${total}</span><span class="stat-lbl">합계</span></div>
+                    <div class="stat-box"><span class="stat-val">${Math.round((total/112)*100)}%</span><span class="stat-lbl">달성율</span></div>
+                    <div class="stat-box"><span class="stat-val">3/3</span><span class="stat-lbl">시작</span></div>
+                </div>
+                <div class="dot-grid">${generateDots(h)}</div>
+            `;
+            dash.appendChild(card);
+        });
+    }
+
+    // --- Core Logic (기존 기능 유지) ---
+    function calculateStreak(name) {
+        let streak = 0, check = new Date(TODAY_STR);
+        if(!(habitData[name] && habitData[name][getFmtDate(check)])) return 0;
+        while(habitData[name] && habitData[name][getFmtDate(check)]) { streak++; check.setDate(check.getDate() - 1); }
+        return streak;
+    }
     function generateDots(h) {
         const start = new Date(START_DATE_STR); let dots = '';
         for(let i=0; i<112; i++) {
@@ -260,14 +267,6 @@
         }
         return dots;
     }
-
-    function calculateStreak(name) {
-        let streak = 0, check = new Date(TODAY_STR);
-        if(!(habitData[name] && habitData[name][getFmtDate(check)])) return 0;
-        while(habitData[name] && habitData[name][getFmtDate(check)]) { streak++; check.setDate(check.getDate() - 1); }
-        return streak;
-    }
-
     function getWeekInfo(d) {
         const day = d.getDay(), diffToThu = (day === 0 ? -3 : 4 - day);
         const thu = new Date(d); thu.setDate(d.getDate() + diffToThu);
@@ -276,50 +275,35 @@
         while(firstThu.getDay() !== 4) firstThu.setDate(firstThu.getDate() + 1);
         return { month: mon, week: 1 + Math.round((thu - firstThu) / 604800000) };
     }
-
     function checkNavBounds() {
         const mon = getMonday(displayDate);
         document.getElementById('prevBtn').disabled = mon <= getMonday(new Date(START_DATE_STR));
         document.getElementById('nextBtn').disabled = mon >= getMonday(new Date(END_DATE_STR));
     }
-
     function getMonday(d) { const date = new Date(d); const day = date.getDay(); const diff = date.getDate() - day + (day === 0 ? -6 : 1); return new Date(date.getFullYear(), date.getMonth(), diff); }
     function changeWeek(o) { displayDate.setDate(displayDate.getDate() + (o * 7)); renderWeek(); checkNavBounds(); renderPlanner(); }
-    
-    function addTask() { 
-        const h = document.getElementById('taskHabitSelect').value, t = document.getElementById('taskInput').value, k = getFmtDate(getMonday(displayDate)); 
-        if(!t) return; 
-        if(!weeklyTasks[k]) weeklyTasks[k] = []; 
-        weeklyTasks[k].push({ habit: h, text: t, done: false }); 
-        localStorage.setItem('bp_v12_tasks', JSON.stringify(weeklyTasks)); 
-        document.getElementById('taskInput').value = ''; 
-        renderPlanner(); 
-    }
-    
+    function toggleCheck(n, d) { if(!habitData[n]) habitData[n] = {}; habitData[n][d] = !habitData[n][d]; localStorage.setItem('bp_v13_data', JSON.stringify(habitData)); renderWeek(); renderVisuals(); renderIntegratedCalendar(); }
+    function addTask() { const h = document.getElementById('taskHabitSelect').value, t = document.getElementById('taskInput').value, k = getFmtDate(getMonday(displayDate)); if(!t) return; if(!weeklyTasks[k]) weeklyTasks[k] = []; weeklyTasks[k].push({ habit: h, text: t, done: false }); localStorage.setItem('bp_v13_tasks', JSON.stringify(weeklyTasks)); document.getElementById('taskInput').value = ''; renderPlanner(); }
     function renderPlanner() { 
-        const k = getFmtDate(getMonday(displayDate)), list = document.getElementById('taskList'); 
-        list.innerHTML = ''; 
+        const k = getFmtDate(getMonday(displayDate)), list = document.getElementById('taskList'); list.innerHTML = ''; 
         (weeklyTasks[k] || []).forEach((t, i) => { 
             const h = myHabits.find(x => x.name === t.habit) || { color: '#8e8e93' }; 
-            list.innerHTML += `
-                <div class="task-item ${t.done ? 'done' : ''}" style="--color:${h.color}">
-                    <div class="task-content" onclick="toggleTask('${k}', ${i})">
-                        <span>${t.done ? '✅' : '○'}</span>
-                        <span class="task-text"><strong>[${t.habit}]</strong> ${t.text}</span>
-                    </div>
-                    <button class="task-del-btn" onclick="deleteTask('${k}', ${i})">✕</button>
-                </div>`; 
+            list.innerHTML += `<div class="task-item" style="--color:${h.color}"><div class="task-content ${t.done?'done':''}" onclick="toggleTask('${k}', ${i})"><span>${t.done?'✅':'○'}</span><span class="task-text"><strong>[${t.habit}]</strong> ${t.text}</span></div><button class="task-del-btn" onclick="deleteTask('${k}', ${i})">✕</button></div>`;
         }); 
     }
-
-    function toggleTask(k, i) { weeklyTasks[k][i].done = !weeklyTasks[k][i].done; localStorage.setItem('bp_v12_tasks', JSON.stringify(weeklyTasks)); renderPlanner(); }
-    function deleteTask(k, i) { if(confirm("이 할 일을 삭제할까요?")) { weeklyTasks[k].splice(i, 1); localStorage.setItem('bp_v12_tasks', JSON.stringify(weeklyTasks)); renderPlanner(); } }
-    
-    function toggleCheck(n, d) { if(!habitData[n]) habitData[n] = {}; habitData[n][d] = !habitData[n][d]; localStorage.setItem('bp_v12_data', JSON.stringify(habitData)); renderWeek(); renderVisuals(); }
-    function updateSelectMenus() { const m = ["경영통계", "투자론", "조직행위론", "전자금융의 이해", "마케팅", "재무관리"]; document.getElementById('taskHabitSelect').innerHTML = m.map(n => `<option value="${n}">${n}</option>`).join('') + '<option value="기타">기타</option>'; document.getElementById('deleteHabitSelect').innerHTML = myHabits.map(h => `<option value="${h.name}">${h.name}</option>`).join(''); document.getElementById('orderHabitSelect').innerHTML = myHabits.map(h => `<option value="${h.name}">${h.name}</option>`).join(''); }
-    function addNewHabit() { const n = document.getElementById('newName').value, g = document.getElementById('newGroup').value; if(!n) return; myHabits.push({ name: n, color: selectedColor, group: g }); localStorage.setItem('bp_v12_habits', JSON.stringify(myHabits)); init(); document.getElementById('newName').value = ''; }
-    function moveHabit(d) { const n = document.getElementById('orderHabitSelect').value, i = myHabits.findIndex(h => h.name === n), ni = i + d; if(ni >= 0 && ni < myHabits.length) { [myHabits[i], myHabits[ni]] = [myHabits[ni], myHabits[i]]; localStorage.setItem('bp_v12_habits', JSON.stringify(myHabits)); init(); } }
-    function deleteHabit() { const n = document.getElementById('deleteHabitSelect').value; if(confirm(`'${n}' 항목을 정말 삭제하시겠습니까?`)) { myHabits = myHabits.filter(h => h.name !== n); localStorage.setItem('bp_v12_habits', JSON.stringify(myHabits)); init(); } }
+    function toggleTask(k, i) { weeklyTasks[k][i].done = !weeklyTasks[k][i].done; localStorage.setItem('bp_v13_tasks', JSON.stringify(weeklyTasks)); renderPlanner(); }
+    function deleteTask(k, i) { if(confirm("삭제하시겠습니까?")) { weeklyTasks[k].splice(i, 1); localStorage.setItem('bp_v13_tasks', JSON.stringify(weeklyTasks)); renderPlanner(); } }
+    function renderPalette() { document.getElementById('palette').innerHTML = COLORS.map(c => `<div class="color-opt ${c === selectedColor ? 'selected' : ''}" style="background:${c}" onclick="selectColor('${c}')"></div>`).join(''); }
+    function selectColor(c) { selectedColor = c; renderPalette(); }
+    function updateSelectMenus() { 
+        const m = ["경영통계", "투자론", "조직행위론", "전자금융의 이해", "마케팅", "재무관리"]; 
+        document.getElementById('taskHabitSelect').innerHTML = m.map(n => `<option value="${n}">${n}</option>`).join('') + '<option value="기타">기타</option>'; 
+        document.getElementById('deleteHabitSelect').innerHTML = myHabits.map(h => `<option value="${h.name}">${h.name}</option>`).join(''); 
+        document.getElementById('orderHabitSelect').innerHTML = myHabits.map(h => `<option value="${h.name}">${h.name}</option>`).join(''); 
+    }
+    function addNewHabit() { const n = document.getElementById('newName').value, g = document.getElementById('newGroup').value; if(!n) return; myHabits.push({ name: n, color: selectedColor, group: g }); localStorage.setItem('bp_v13_habits', JSON.stringify(myHabits)); init(); document.getElementById('newName').value = ''; }
+    function moveHabit(d) { const n = document.getElementById('orderHabitSelect').value, i = myHabits.findIndex(h => h.name === n), ni = i + d; if(ni >= 0 && ni < myHabits.length) { [myHabits[i], myHabits[ni]] = [myHabits[ni], myHabits[i]]; localStorage.setItem('bp_v13_habits', JSON.stringify(myHabits)); init(); } }
+    function deleteHabit() { const n = document.getElementById('deleteHabitSelect').value; if(confirm(`'${n}' 항목을 삭제하시겠습니까?`)) { myHabits = myHabits.filter(h => h.name !== n); localStorage.setItem('bp_v13_habits', JSON.stringify(myHabits)); init(); } }
 
     init();
 </script>
